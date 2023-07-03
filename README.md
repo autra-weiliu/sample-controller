@@ -87,13 +87,13 @@ go build -o sample-controller .
 ./sample-controller -kubeconfig=$HOME/.kube/config
 
 # create a CustomResourceDefinition
-kubectl create -f artifacts/examples/crd-status-subresource.yaml
+kubectl -n ml-infra create -f artifacts/examples/crd-status-subresource.yaml
 
 # create a custom resource of type Foo
-kubectl create -f artifacts/examples/example-foo.yaml
+kubectl -n ml-infra create -f artifacts/examples/example-foo.yaml
 
 # check deployments created through the custom resource
-kubectl get deployments
+kubectl -n ml-infra get deployments
 ```
 
 ## Use Cases
